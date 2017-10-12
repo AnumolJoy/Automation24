@@ -28,7 +28,9 @@ public abstract class BaseTest implements IAutoConst {
 		driver=new RemoteWebDriver(whichSystem,whichBrowser);
 		String url=Lib.getProperty(CONFIG_PATH,"URL");
 		driver.get(url);
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);    
+		String IOT=Lib.getProperty(CONFIG_PATH,"IOT");
+		long lIOT=Long.parseLong(IOT);
+		driver.manage().timeouts().implicitlyWait(lIOT,TimeUnit.SECONDS);    
 	}
 	
 	
